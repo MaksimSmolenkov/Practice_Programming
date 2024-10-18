@@ -1,17 +1,23 @@
-class ProductsPage {
+class ProductPage {
     constructor(page) {
         this.page = page;
-        this.addToCartButton = '.btn_inventory';
-        this.cartLink = '.shopping_cart_link';
+        this.addToCartButtons = '.inventory_item:first-of-type button'; 
+        this.cartButton = '#shopping_cart_link'; 
+        this.cart_badge  = '#shopping_cart_badge';
     }
 
-    async addProductToCart(index) {
-        await this.page.click(any.inventory_item,nth-child($,{index}), $,{this:addToCartButton});
+    async addProductToCart(productIndex) {
+        
+        await this.page.click(this.addToCartButtons);
+    }
+
+    async getCartCount() {
+        return this.page.innerText(this.cart_badge) 
     }
 
     async goToCart() {
-        await this.page.click(this.cartLink);
+        await this.page.click(this.cartButton);
     }
 }
 
-module.exports = ProductsPage;
+module.exports = ProductPage;
