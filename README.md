@@ -1,3 +1,5 @@
+
+Лабы по практикуму: https://s.craft.me/mKjFtJteMdxhCL
 # Practice_Programming
 Для запуска нужен установленный VSCode с расширениями playwright, JavaScript
 
